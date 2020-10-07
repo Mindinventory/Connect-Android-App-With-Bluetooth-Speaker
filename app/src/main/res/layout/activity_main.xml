@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvBluetoothStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dp_10"
+        android:text="@string/bluetooth_status"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_20"/>
+
+    <androidx.appcompat.widget.AppCompatToggleButton
+        android:id="@+id/tbBluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textOn="@string/on"
+        android:textOff="@string/off"
+        android:layout_marginTop="@dimen/dp_4"
+        app:layout_constraintTop_toTopOf="@id/tvBluetoothStatus"
+        app:layout_constraintBottom_toBottomOf="@id/tvBluetoothStatus"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnShowPairedDevices"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:text="@string/show_paired_devices"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBluetoothStatus" />
+
+    <LinearLayout
+        android:id="@+id/lnrLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:weightSum="2"
+        android:layout_marginBottom="@dimen/dp_10">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPlay"
+        style="@style/ButtonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:text="@string/play_music"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_13"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDisconnect"
+        style="@style/ButtonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:text="@string/disconnect"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_13"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_5" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/rvPairedDevices"
+        android:choiceMode="singleChoice"
+        app:layout_constraintBottom_toTopOf="@+id/lnrLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        tools:listitem="@layout/row_paired_device_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/btnShowPairedDevices" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

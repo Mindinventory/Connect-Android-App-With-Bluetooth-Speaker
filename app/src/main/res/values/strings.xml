@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BluetoothHeadsetConnectivity</string>
+    <string name="off">OFF</string>
+    <string name="on">ON</string>
+    <string name="play_music">Play Music</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="show_paired_devices">Show Paired Devices</string>
+    <string name="bluetooth_status">Bluetooth Status</string>
+</resources>
