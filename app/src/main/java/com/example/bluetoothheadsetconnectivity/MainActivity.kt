@@ -6,10 +6,8 @@ import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothProfile
 import android.bluetooth.BluetoothProfile.ServiceListener
-import android.content.Context
 import android.content.Intent
 import android.media.AudioAttributes
-import android.media.AudioManager
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
@@ -27,8 +25,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var isEnabled: Boolean = false
     private var REQUEST_ENABLE_BT = 0
-    private var mAudioManager: AudioManager? = null
-    private var mPlayer1: MediaPlayer? = null
+    private var mPlayer: MediaPlayer? = null
     private var devices: MutableSet<BluetoothDevice>? = null
     private var device: BluetoothDevice? = null
     private var b: IBinder? = null
@@ -45,7 +42,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         enableBluetooth()
-        mAudioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
         setOnClickListener()
     }
 
@@ -144,26 +140,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun releaseMediaPlayer() {
-        if (mPlayer1 != null) {
-            mPlayer1!!.release()
-            mPlayer1 = null
+        if (mPlayer != null) {
+            mPlayer!!.release()
+            mPlayer = null
         }
     }
 
     private fun playMusic() {
         //streaming music on the connected A2DP device
-        mPlayer1 = MediaPlayer()
+        mPlayer = MediaPlayer()
         try {
-            mPlayer1!!.setAudioAttributes(
+            mPlayer!!.setAudioAttributes(
                 AudioAttributes.Builder()
                     .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build()
             )
-            mPlayer1!!.setDataSource(
+            mPlayer!!.setDataSource(
                 this,
                 Uri.parse("https://www.hrupin.com/wp-content/uploads/mp3/testsong_20_sec.mp3")
             )
-            mPlayer1!!.prepare()
-            mPlayer1!!.start()
+            mPlayer!!.prepare()
+            mPlayer!!.start()
         } catch (e: IOException) {
             e.printStackTrace()
         }
