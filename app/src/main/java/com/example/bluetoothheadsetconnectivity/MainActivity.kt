@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     object : ServiceListener {
                         override fun onServiceDisconnected(profile: Int) {
                             setIsA2dpReady(false)
+                            disConnectUsingBluetoothA2dp(device)
                         }
 
                         override fun onServiceConnected(
@@ -116,7 +117,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         "disconnect",
                         BluetoothDevice::class.java
                     ).invoke(a2dp, deviceToConnect)
-
+                    BluetoothAdapter.getDefaultAdapter()
+                        .closeProfileProxy(BluetoothProfile.A2DP, a2dp)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
