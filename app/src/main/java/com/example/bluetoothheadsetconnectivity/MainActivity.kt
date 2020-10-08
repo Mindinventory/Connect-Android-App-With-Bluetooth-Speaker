@@ -143,8 +143,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun releaseMediaPlayer() {
         if (mPlayer != null) {
-            mPlayer!!.release()
-            mPlayer = null
+            mPlayer?.release()
         }
     }
 
@@ -152,16 +151,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //streaming music on the connected A2DP device
         mPlayer = MediaPlayer()
         try {
-            mPlayer!!.setAudioAttributes(
+            mPlayer?.setAudioAttributes(
                 AudioAttributes.Builder()
                     .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build()
             )
-            mPlayer!!.setDataSource(
+            mPlayer?.setDataSource(
                 this,
                 Uri.parse("https://www.hrupin.com/wp-content/uploads/mp3/testsong_20_sec.mp3")
             )
-            mPlayer!!.prepare()
-            mPlayer!!.start()
+            mPlayer?.prepare()
+            mPlayer?.start()
         } catch (e: IOException) {
             e.printStackTrace()
         }
