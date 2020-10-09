@@ -1,7 +1,7 @@
 # Connect-Android-App-With-Bluetooth-Speaker
 
 <p align="center">
-  <img width="460" height="300" src="https://postimg.cc/xckqq595">
+  <src="https://postimg.cc/xckqq595">
 </p>
 
 This project demonstrates how to connect to a Bluetooth speaker and stream audio from an android application.It is set up as an app project that checks for the bluetooth connection, searching for nearby devices and establishes connection using A2DP.
