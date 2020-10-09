@@ -142,9 +142,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun releaseMediaPlayer() {
-        if (mPlayer != null) {
-            mPlayer?.release()
-        }
+        mPlayer?.release()
     }
 
     private fun playMusic() {
