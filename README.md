@@ -1,4 +1,7 @@
 # Connect-Android-App-With-Bluetooth-Speaker
+
+[![IMG-20201009-123143.jpg](https://i.postimg.cc/rwg94wMt/IMG-20201009-123143.jpg)](https://postimg.cc/bZDbc8Gz)
+
 This project demonstrates how to connect to a Bluetooth speaker and stream audio from an android application.It is set up as an app project that checks for the bluetooth connection, searching for nearby devices and establishes connection using A2DP.
 
 The Advanced Audio Distribution Profile (A2DP) is the technology behind what's popularly known as Bluetooth Stereo Audio. Bluetooth A2DP enables a device such as a smartphone to connect wirelessly to a Bluetooth stereo headset and transmit music or other audio, as from a video.
