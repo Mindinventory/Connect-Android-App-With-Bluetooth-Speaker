@@ -9,3 +9,6 @@ The Advanced Audio Distribution Profile (A2DP) is the technology behind what's p
 * Connecting to a Bluetooth speaker of interest
 * Streaming audio through the Bluetooth Speaker
 * Disconnecting the speaker after playing the audio
+
+# LICENSE!
+Connect Android App With Bluetooth Speaker is [MIT-licensed](https://github.com/Mindinventory/Connect-Android-App-With-Bluetooth-Speaker/blob/master/LICENSE).
