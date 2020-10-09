@@ -12,3 +12,6 @@ The Advanced Audio Distribution Profile (A2DP) is the technology behind what's p
 
 ## LICENSE!
 Connect Android App With Bluetooth Speaker is [MIT-licensed](https://github.com/Mindinventory/Connect-Android-App-With-Bluetooth-Speaker/blob/master/LICENSE).
+
+## Let us know!
+We’d be really happy if you send us links to your projects where you use our component. Just send an email to [sales@mindinventory.com](sales@mindinventory.com) And do let us know if you have any questions or suggestion regarding our work.
